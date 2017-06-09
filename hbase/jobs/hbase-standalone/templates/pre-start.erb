@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source /var/vcap/jobs/hbase-standalone/bin/variables.sh
+
+mkdir -p $HBASE_LOG_DIR
+chown -R vcap:vcap $HBASE_LOG_DIR
+

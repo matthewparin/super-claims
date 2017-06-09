@@ -1,0 +1,14 @@
+---
+name: hbase-standalone
+
+templates:
+  pre-start.erb: bin/pre-start
+  ctl.erb: bin/ctl
+  variables.sh.erb: bin/variables.sh
+
+packages:
+- jdk8
+- hbase
+
+properties: {}
+

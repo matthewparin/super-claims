@@ -1,0 +1,6 @@
+check process hbase-standalone
+  with pidfile /var/vcap/sys/run/hbase-standalone/hbase--master.pid
+  start program "/var/vcap/jobs/hbase-standalone/bin/ctl start" as uid vcap and gid vcap
+  stop program "/var/vcap/jobs/hbase-standalone/bin/ctl stop"
+  group vcap
+
