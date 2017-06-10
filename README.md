@@ -24,7 +24,7 @@ git clone git@github.com:lnhrdt/super-claims.git
 ### Upload HBase release
 
 ```
-cd ~/workspace/super-claims/hbase
+cd ~/workspace/super-claims/releases/hbase
 ./download_blobs.sh
 bosh create-release
 bosh -e lite upload-release
