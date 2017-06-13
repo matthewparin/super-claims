@@ -2,7 +2,6 @@
 hbase/hbase-1.2.6-bin.tar.gz:
   size: 104659474
   sha: 19fe7bc1443d54bbf1fa405dfde62e37b3ea6cf6
-java8/jdk-8u131-linux-x64.tar.gz:
+oraclejdk8/jdk-8u131-linux-x64.tar.gz:
   size: 185540433
   sha: c2a5582c049beb5c7af6b87a469bc53b759b7b87
-

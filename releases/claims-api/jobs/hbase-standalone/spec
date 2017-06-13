@@ -7,7 +7,7 @@ templates:
   variables.sh.erb: bin/variables.sh
 
 packages:
-- jdk8
+- oraclejdk8
 - hbase
 
 properties: {}

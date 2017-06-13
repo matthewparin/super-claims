@@ -1,0 +1,7 @@
+---
+name: oraclejdk8
+
+dependencies: []
+
+files:
+- oraclejdk8/jdk-8u131-linux-x64.tar.gz
