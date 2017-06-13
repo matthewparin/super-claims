@@ -2,9 +2,7 @@ name: super-claims
 director_uuid: 63ddb6a6-d6fe-40e1-b16b-2ff6b2034c79
 
 releases:
-- {name: hbase, version: latest}
-- {name: kafka_release, version: latest}
-- {name: zookeeper_release, version: latest}
+- {name: claims-api, version: latest}
 
 update:
   canaries: 1
@@ -18,7 +16,7 @@ instance_groups:
   azs: [default]
   jobs:
   - name: hbase-standalone
-    release: hbase
+    release: claims-api
   resource_pool: default
   persistent_disk_type: default
   networks:
@@ -29,7 +27,7 @@ instance_groups:
   azs: [default]
   jobs:
   - name: zookeeper_server
-    release: zookeeper_release
+    release: claims-api
     provides:
       zookeeper: {as: zookeeper}
     consumes:
@@ -44,7 +42,7 @@ instance_groups:
   azs: [default]
   jobs:
   - name: kafka_server
-    release: kafka_release
+    release: claims-api
     provides:
       kafka: {as: kafka}
     consumes:
