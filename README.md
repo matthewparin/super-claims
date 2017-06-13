@@ -4,14 +4,33 @@ A BOSH-managed HBase deployment
 
 ## Run super-claims locally
 
-### Install BOSH Lite
-
-https://github.com/cloudfoundry/bosh-lite#install-bosh-lite
-
-Alias the environment as "lite":
+### Setup your workstation
 
 ```
+brew install cloudfoundry/tap/bosh-cli
+ln -s /usr/local/bin/bosh2 /usr/local/bin/bosh
+brew cask install vagrant
+brew cask install virtualbox
+mkdir -p ~/workspace
+```
+
+### Install BOSH Lite
+
+Download, start, and configure BOSH Lite:
+
+```
+cd ~/workspace
+git clone https://github.com/cloudfoundry/bosh-lite
+cd bosh-lite
+vagrant up --provider=virtualbox
 bosh alias-env lite -e 192.168.50.4 --ca-cert ca/certs/ca.crt
+bin/add-route
+```
+
+Login to BOSH Lite using username: `admin` and password: `admin`:
+
+```
+bosh -e lite login
 ```
 
 ### Clone super-claims
