@@ -8,7 +8,7 @@ templates:
 
 packages:
 -  kafka
--  jdk
+-  oraclejdk8
 -  common
 
 provides:

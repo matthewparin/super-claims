@@ -2,7 +2,7 @@
 name: kafka
 
 dependencies:
-  - jdk
+  - oraclejdk8
 
 files:
   - kafka/kafka_2.10-0.10.2.1.tgz
