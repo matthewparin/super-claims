@@ -72,6 +72,26 @@ cd ~/workspace/kafka_2.10-0.10.2.1
 
 Type a message in the first terminal and hit enter. You should see the message appear in the second terminal.
 
+### Kafka Zookeeper
+
+Open a connection to Zookeeper:
+
+```
+telnet 10.244.0.3 2181
+```
+
+Type `stats` and press enter.
+
 ### HBase
 
 - HBase Master Web UI: http://10.244.0.2:16010
+
+### HBase Zookeeper
+
+Open a connection to Zookeeper:
+
+```
+telnet 10.244.0.2 2181
+```
+
+Type `stats` and press enter.
