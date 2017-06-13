@@ -3,6 +3,8 @@ director_uuid: 63ddb6a6-d6fe-40e1-b16b-2ff6b2034c79
 
 releases:
 - {name: hbase, version: latest}
+- {name: kafka_release, version: latest}
+- {name: zookeeper_release, version: latest}
 
 update:
   canaries: 1
@@ -22,3 +24,36 @@ instance_groups:
   networks:
   - name: default
 
+- name: zoo_node
+  instances: 3
+  azs: [default]
+  jobs:
+  - name: zookeeper_server
+    release: zookeeper_release
+    provides:
+      zookeeper: {as: zookeeper}
+    consumes:
+      zookeeper: {from: zookeeper}
+  resource_pool: default
+  persistent_disk_type: default
+  networks:
+  - name: default
+
+- name: kafka_node
+  instances: 5
+  azs: [default]
+  jobs:
+  - name: kafka_server
+    release: kafka_release
+    provides:
+      kafka: {as: kafka}
+    consumes:
+      zookeeper: {from: zookeeper}
+      kafka: {from: kafka}
+    properties:
+      auto_create_topics: true
+      default_replication_factor: 1
+  resource_pool: default
+  persistent_disk_type: default
+  networks:
+  - name: default
