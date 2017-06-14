@@ -35,7 +35,7 @@ bosh -e lite login
 ### Upload claims-api release
 
 ```
-cd ~/workspace/super-claims/releases/claims-api
+cd ~/workspace/super-claims/release
 ./download_blobs.sh
 bosh create-release
 bosh -e lite upload-release
@@ -50,7 +50,7 @@ bosh -e lite upload-stemcell "https://bosh.io/d/stemcells/bosh-warden-boshlite-u
 ### Deploy super-claims
 
 ```
-cd ~/workspace/super-claims/manifests
+cd ~/workspace/super-claims/deployment
 bosh -e lite update-cloud-config cloud-lite.yml
 bosh -e lite -d super-claims deploy manifest.yml
 ```
