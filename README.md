@@ -17,6 +17,13 @@ git clone https://github.com/cloudfoundry/bosh-lite
 git clone git@github.com:lnhrdt/super-claims.git
 ```
 
+### Configure proxy for BOSH Lite (needed at HCSC)
+
+```
+echo 'export NO_PROXY=$NO_PROXY,192.168.50.4' >> ~/.bash_profile
+echo 'export no_proxy=$no_proxy,192.168.50.4' >> ~/.bash_profile
+```
+
 ### Every time you restart your computer
 
 ```
