@@ -32,6 +32,13 @@ Login to BOSH Lite using username: `admin` and password: `admin`:
 bosh -e lite login
 ```
 
+### Fetch the latest code
+
+```
+cd ~/workspace/super-claims
+git pull
+```
+
 ### Upload claims-api release
 
 ```
