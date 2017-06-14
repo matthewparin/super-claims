@@ -12,16 +12,15 @@ ln -s /usr/local/bin/bosh2 /usr/local/bin/bosh
 brew cask install vagrant
 brew cask install virtualbox
 mkdir -p ~/workspace
-```
-
-### Install BOSH Lite
-
-Download, start, and configure BOSH Lite:
-
-```
 cd ~/workspace
 git clone https://github.com/cloudfoundry/bosh-lite
-cd bosh-lite
+git clone git@github.com:lnhrdt/super-claims.git
+```
+
+### Every time you restart your computer
+
+```
+cd ~/workspace/bosh-lite
 vagrant up --provider=virtualbox
 bosh alias-env lite -e 192.168.50.4 --ca-cert ca/certs/ca.crt
 bin/add-route
@@ -31,13 +30,6 @@ Login to BOSH Lite using username: `admin` and password: `admin`:
 
 ```
 bosh -e lite login
-```
-
-### Clone super-claims
-
-```
-cd ~/workspace
-git clone git@github.com:lnhrdt/super-claims.git
 ```
 
 ### Upload claims-api release
